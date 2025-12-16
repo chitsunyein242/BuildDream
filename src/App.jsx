@@ -1,17 +1,16 @@
-import Header from "./components/Header/Header"
-import Navbar from "./components/Header/Navbar"
-import Home from "./components/Home/Home"
+import { useLocation } from "react-router";
+import Router from "./routes/index";
+import { AnimatePresence } from "framer-motion";
 
 function App() {
-  
-
+  const location = useLocation()
   return (
-      <div>
-        <Header/>
-        <Navbar/>
-        <Home/>
-    </div>
-  )
+     <>
+      <AnimatePresence>
+        <Router key={location.pathname}/>
+      </AnimatePresence>
+     </>
+  );
 }
 
-export default App
+export default App;

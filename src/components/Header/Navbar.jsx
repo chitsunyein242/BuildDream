@@ -1,10 +1,12 @@
 import { useState } from 'react'
 import './Header.css'
 import{ BiMenu } from 'react-icons/bi'
+import { NavLink } from 'react-router-dom'
 
 const Navbar = () => {
 
     const [showMenu,setShowMenu] = useState(false);
+    let activeClassName = 'activeClassName'
   return (
     <div className="bg-gray-700 overflow-hidden w-full">
         <div className="max-w-7xl flex justify-between mx-auto items-center">
@@ -13,51 +15,65 @@ const Navbar = () => {
             Builddream
         </h1>
       </div>
-      <buttton onClick={() => setShowMenu(!showMenu)} className="flex text-white text-lg items-center mr-4 md:hidden bg-transparent boder-0">
+            <button onClick={() => setShowMenu(!showMenu)} className="flex text-white text-lg items-center mr-4 md:hidden bg-transparent boder-0">
         <BiMenu/>
         <span className="ml-1">
             MENU
         </span>
-      </buttton>
+            </button>
 
-      <div className={`fixed  md:static ${showMenu ? '' : 'hidden md:block'} bg-gray-700 md:bg-transparent w-full top-[164px] md:top-0 md:w-auto`}>
-        <ul className="flex flex-col md:flex-row items-center">
-            <li>
-                <a href=""className='px-3 py-6 block text-gray-400 uppercase'>
-                    Home
-                </a>
-            </li>
-            <li>
-                <a href=""className='px-3 py-6 block text-gray-400 uppercase'>
-                    About
-                </a>
-            </li>
-            <li>
-                <a href=""className='px-3 py-6 block text-gray-400 uppercase'>
-                    Services
-                </a>
-            </li>
-            <li>
-                <a href=""className='px-3 py-6 block text-gray-400 uppercase'>
-                    Project
-                </a>
-            </li>
-            <li>
-                <a href=""className='px-3 py-6 block text-gray-400 uppercase'>
-                    Pricing
-                </a>
-            </li>
-            <li>
-                <a href=""className='px-3 py-6 block text-gray-400 uppercase'>
-                    Blog
-                </a>
-            </li>
-            <li>
-                <a href=""className='px-3 py-6 block text-gray-400 uppercase'>
-                    Contact
-                </a>
-            </li>
-        </ul>
+      <div className={`fixed  md:static ${showMenu ? '' : 'hidden md:block'} bg-gray-700 md:bg-transparent z-50  w-full top-[220px] md:top-0 md:w-auto`}>
+        <ul className='flex flex-col md:flex-row items-start md:items-center'>
+                    <li>
+                        <NavLink to='/'  className={({ isActive }) =>
+                            isActive ? `${activeClassName} px-3 py-6 block text-gray-200 mx-4 uppercase` : 'px-3 py-6 mx-4 block text-gray-400 uppercase'
+                            }>
+                            Home
+                        </NavLink>
+                    </li>
+                    <li>
+                        <NavLink to='/about'  className={({ isActive }) =>
+                            isActive ? `${activeClassName} px-3 py-6 block text-gray-200 mx-4 uppercase` : 'px-3 py-6 mx-4 block text-gray-400 uppercase'
+                            }>
+                            About
+                        </NavLink>
+                    </li>
+                    <li>
+                        <NavLink to='/service'  className={({ isActive }) =>
+                            isActive ? `${activeClassName} px-3 py-6 block text-gray-200 mx-4 uppercase` : 'px-3 py-6 mx-4 block text-gray-400 uppercase'
+                            }>
+                            Services
+                        </NavLink>
+                    </li>
+                    <li>
+                        <NavLink to='/project'  className={({ isActive }) =>
+                            isActive ? `${activeClassName} px-3 py-6 block text-gray-200 mx-4 uppercase` : 'px-3 py-6 mx-4 block text-gray-400 uppercase'
+                            }>
+                            Project
+                        </NavLink>
+                    </li>
+                    <li>
+                        <NavLink to='/pricing'  className={({ isActive }) =>
+                            isActive ? `${activeClassName} px-3 py-6 block text-gray-200 mx-4 uppercase` : 'px-3 py-6 mx-4 block text-gray-400 uppercase'
+                            }>
+                            Pricing
+                        </NavLink>
+                    </li>
+                    <li>
+                        <NavLink to='/blog'  className={({ isActive }) =>
+                            isActive ? `${activeClassName} px-3 py-6 block text-gray-200 mx-4 uppercase` : 'px-3 py-6 mx-4 block text-gray-400 uppercase'
+                            }>
+                            Blog
+                        </NavLink>
+                    </li>
+                    <li>
+                        <NavLink to='/contact'  className={({ isActive }) =>
+                            isActive ? `${activeClassName} px-3 py-6 block text-gray-200 mx-4 uppercase` : 'px-3 py-6 mx-4 block text-gray-400 uppercase'
+                            }>
+                            Contact
+                        </NavLink>
+                    </li>
+                </ul>
       </div>
         </div>
     </div>

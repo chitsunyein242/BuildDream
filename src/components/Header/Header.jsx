@@ -5,7 +5,7 @@ const Header = () => {
   
   return (
     <div className="bg-secondary-color w-full">
-      <div className="flex w-full max-w-7xl mx-auto py-5  gap-x-4 items-center">
+      <div className="flex w-full max-w-7xl mx-auto py-5  gap-4 items-center flex-wrap">
         <div className="flex-1">
           <div className="w-full flex justify-between flex-col md:flex-row">
             <div>
